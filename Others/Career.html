@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Metadata for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page title -->
+    <title>Immersive Web Experience - Page 4</title>
+	 <link rel="stylesheet" href="mainstyle.css">
+    <!-- Styling for the page -->
+    
+</head>
+<body>
+    <!-- Header section with main heading -->
+    <header>
+        <h1>Immersive Web Experience</h1>
+    </header>
+    
+    <!-- Navigation links -->
+    <nav>
+        <a href="../Homepage.html">Welcome Home!</a>
+        <a href="../Others/Theory.html">HTML theory</a>
+        <a href="../Others/Practical.html">My practical experience</a>
+        <a href="../Others/Career.html">My career</a>
+        <a href="../Others/About.html">About me</a>
+    </nav>
+
+
+    <!-- Main content section -->
+    <main>
+        <!-- Secondary heading for the current page -->
+        <h2>Page 4 - Unleash the Creativity</h2>
+
+        <!-- Feature section with three individual features -->
+        <div class="feature">
+            <!-- Feature 1 -->
+            <div>
+                <h3>Creative Section 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero in orci feugiat, sit amet cursus augue efficitur.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div>
+                <h3>Artistic Section 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero in orci feugiat, sit amet cursus augue efficitur.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div>
+                <h3>Innovative Section 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla convallis libero in orci feugiat, sit amet cursus augue efficitur.</p>
+            </div>
+        </div>
+
+        <!-- Slideshow container for artwork images -->
+        <div class="slideshow-container">
+            <!-- Individual slides with images -->
+            <div class="mySlides">
+                <img src="artwork1.jpg" alt="Artwork 1">
+            </div>
+
+            <div class="mySlides">
+                <img src="artwork2.jpg" alt="Artwork 2">
+            </div>
+
+            <div class="mySlides">
+                <img src="artwork3.jpg" alt="Artwork 3">
+            </div>
+
+            <!-- Navigation arrows for the slideshow -->
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+    </main>
+
+    <!-- JavaScript code for the slideshow functionality -->
+    <script>
+        // Variable to keep track of the current slide index
+        let slideIndex = 0;
+
+        // Function to display slides
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Move to the next slide
+            slideIndex++;
+
+            // Reset index if it exceeds the number of slides
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].style.display = "block";
+
+            // Call the function again after 3 seconds for automatic slideshow
+            setTimeout(showSlides, 3000);
+        }
+
+        // Initial call to start the slideshow
+        showSlides();
+
+        // Function to navigate slides manually
+        function plusSlides(n) {
+            // Increment or decrement the slide index
+            slideIndex += n;
+
+            let slides = document.getElementsByClassName("mySlides");
+
+            // Reset index if it exceeds the number of slides
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+
+            if (slideIndex < 1) {
+                slideIndex = slides.length;
+            }
+
+            // Hide all slides
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Display the current slide
+            slides[slideIndex - 1].style.display = "block";
+        }
+    </script>
+</body>
+</html>

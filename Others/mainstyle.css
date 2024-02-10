@@ -26,6 +26,11 @@
             color: #fff;
             overflow: hidden; /* Hide potential scrollbars */
         }
+        html, body {
+            height: 100%; /* Set height to 100% of the viewport */
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Hide potential horizontal scrollbars */
+        }
 
         /* Keyframe animation for background gradient */
         @keyframes gradient {
@@ -126,16 +131,16 @@
         }
 
 	/* Styling for individual feature sections */
-	.feature div {
-   		 flex: 1;
-   		 margin: 1vw;
-   		 padding: 2vw;
-    		border-radius: 2vw;
-   		 background: rgba(26, 32, 44, 0.9);
-    		box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    		animation: fadeInUp 2s ease;
-    		transition: background 0.3s ease, transform 0.3s ease;
-	}
+    .feature div {
+        flex: 1;
+        margin: 0.5vw; /* Reduced margin */
+        padding: 1vw; /* Reduced padding */
+        border-radius: 1vw; /* Reduced border-radius */
+        background: rgba(26, 32, 44, 0.9);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Reduced box-shadow */
+        animation: fadeInUp 2s ease;
+        transition: background 0.3s ease, transform 0.3s ease;
+    }
 	/* Hover effect for feature section */
 	.feature div:hover {
    		 background: rgba(26, 32, 44, 0.95);
@@ -160,32 +165,33 @@
         .slideshow-container {
             max-width: 100%;
             position: relative;
-            margin-top: 2vw;
+            margin-top: 0.5vw;
             animation: fadeIn 1.5s ease;
         }
-
+        
         /* Styling for slideshow slides */
         .mySlides {
             display: none;
         }
-
-        /* Styling for slideshow images */
+        
+       /* Styling for slideshow images */
         .slideshow-container img {
-            width: 100%;
+            max-width: 50%; /* Ensures the image doesn't exceed its container */
+            width: 10%; /* Adjust this value to reduce the size of the image */
             border-radius: 2vw;
             box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
-
+        
         /* Hover effect for slideshow images */
         .slideshow-container img:hover {
-            transform: scale(1.05);
+            transform: scale(0.95);
         }
 
         /* Styling for slideshow navigation arrows */
         .prev, .next {
             cursor: pointer;
-            position: absolute;
+            position: relative;
             top: 50%;
             width: auto;
             padding: 1vw;
